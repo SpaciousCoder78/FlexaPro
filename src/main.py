@@ -17,7 +17,7 @@ def docx2pdf():
 #menu module
 menyoo=1
 while menyoo==1:
-    print("------------------------Deimos Files and Images-----------------------------")
+    print("-----------------------ConvertibleFlexPro-----------------------------")
     print("1. Docx to pdf")
     print("2.Exit")
     menuoption=int(input("Enter your choice: "))
