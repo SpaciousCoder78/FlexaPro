@@ -5,13 +5,14 @@ import os
 #docx to pdf function
 def docx2pdf():
     #asking the user for path
-    pathfile=input("Enter the file path: ")
+    pathfile=input("Enter the file path of the folder: ")
     #locating the file
     path=os.listdir(pathfile)
     for i,files in enumerate(path):
         if files[-5:]==".docx":
             #converting the file
-            convert(f"pathfile",f"C:/Users/aryan/Desktop/docx2pdf/test.pdf")
+            finalpath=input("Enter the path of the file:  ")
+            convert(f"{finalpath}",f"C:/Users/aryan/Desktop/docx2pdf/test.pdf")
 
 #menu module
 menyoo=1
