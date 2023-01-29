@@ -1,2 +1,2 @@
 # Flexapro
-An app to convert files into various formats
+An app to convert PDF ⇄ Docx
