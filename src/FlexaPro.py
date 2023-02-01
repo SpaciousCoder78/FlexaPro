@@ -13,8 +13,9 @@ def docx2pdf():
     for i,files in enumerate(path):
         if files[-5:]==".docx":
             #converting the file
-            finalpath=input("Enter the path of the file:  ")
-            convert(f"{finalpath}",f"C:/Users/aryan/Desktop/docx2pdf/test.pdf")
+            finalpath=input("Enter the path of the docx file:  ")
+            pdfpath=input("Enter the path of pdf file: ")
+            convert(f"{finalpath}",f"{pdfpath}")
             print("File successfully converted")
 
 #pdf to docx function
