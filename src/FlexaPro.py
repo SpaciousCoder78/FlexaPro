@@ -46,4 +46,4 @@ while menyoo==1:
     elif menuoption==2:
         pdf2docx()
     elif menuoption==3:
-        pass
+        break
