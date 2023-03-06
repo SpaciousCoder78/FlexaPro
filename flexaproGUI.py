@@ -1,3 +1,4 @@
+#importing packages
 import PySimpleGUI as sg
 from docx2pdf import convert
 from pdf2docx import Converter
@@ -7,6 +8,7 @@ import os
 def docx2pdf():
     #creating a layout with several buttons and inputs to get the file path of folder,docx file and final pdf file
     layout1 = [
+               [sg.Text("Enter the file path by using /",size=(15,3))],
                [sg.Text("Enter file path of the folder",size=(15,3)),sg.InputText(key="folder location")],
                [sg.Text("Enter file path of the docx file with name",size=(15,3)),sg.InputText(key="file location")],
                [sg.Text("Enter pdf file location",size=(15,3)),sg.InputText(key="pdf file location")],
@@ -17,7 +19,7 @@ def docx2pdf():
     while True:
         #the entered information is stored in values variable as a dictionary with keys as folder location,file location etc. as specified above and values as what ever u enter
         event,value = window1.read()
-        if event=='exit':
+        if event=='exit'or event== sg.WIN_CLOSED:
             break
         #this clears the information entered wrongly
         if event=="Clear":
@@ -38,7 +40,8 @@ def docx2pdf():
         
 def pdf2docx():
     #creating a layout with several inputs to get the file path of the pdf file and final docx file
-    layout2= [
+    layout2= [ 
+               [sg.Text("Enter the path using /",size=(15,3))],
                [sg.Text("Enter file path of pdf file",size=(15,3)),sg.InputText(key="file location")],
                [sg.Text("Enter docx file location with name",size=(15,3)),sg.InputText(key="docx file location")],
                [sg.Button("submit"),sg.Button('Clear'),sg.Button("exit")]
@@ -48,12 +51,12 @@ def pdf2docx():
     while True:
        #the entered information is stored in values variable as a dictionary with keys as folder location,file location etc. as specified above and values as what ever u enter
        event,value = window2.read()
-       if event=='exit':
+       if event=='exit'or event==sg.WIN_CLOSED:
           break
        #this clears the information entered wrongly
        if event=="Clear":
           for key in values:
-              window1[key]('')
+              window2[key]('')
        #converting pdf file to docx file
        if event=="submit":
            pdfpath = value["file location"]
@@ -66,9 +69,13 @@ def pdf2docx():
 
 sg.theme('DarkTeal9')
 #creating a layout with some buttons to choose conversion type
-layout = [[sg.Button("docx to pdf")],[sg.Button("pdf to docx")],[sg.Exit()]]
+layout = [
+    [sg.Text("FlexaPro, a document converter",size=(15,3))],
+    [sg.Button("docx to pdf")],
+    [sg.Button("pdf to docx")],
+    [sg.Exit()]]
 #creating a window with the layout
-window = sg.Window("format converter",layout)
+window = sg.Window("FlexaProGUI",layout,size=(290, 300))
 #While loop allows user to convert files as many times as they want until they click exit
 while True:
     events,values = window.read()
