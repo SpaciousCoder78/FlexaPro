@@ -10,7 +10,7 @@ An app to convert PDF ⇄ Docx
 - Python 3.10
 - Python libraries --> docx2pdf, PySimpleGUI, pdf2docx
 
-#How to use
+# How to use
 Download the latest version of the app from this github repo's release section
 ![image](https://user-images.githubusercontent.com/88923986/223147900-57e40342-2eec-4956-8e2e-1f6bf1dd6f08.png)
 
@@ -21,7 +21,7 @@ Open the exe file and use
 ![image](https://user-images.githubusercontent.com/88923986/223148476-e9ac76c2-32de-49a0-9362-62d4baf57ad0.png)
 
 
-#Features
+# Features
 
 - pdf to docx conversion
 ![image](https://user-images.githubusercontent.com/88923986/223148866-eb41e282-11b3-4eca-81d4-063eba9d491d.png)
